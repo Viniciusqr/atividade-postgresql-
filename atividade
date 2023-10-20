@@ -1,0 +1,56 @@
+codigos usados para criar as duas tabelas mudando apenas os conteudos 
+create table Jogos(
+id_jogo int not null,
+nome varchar (30) not null ,
+plataforma varchar (30) not null,
+lançamento date not null,
+categoria text not null,
+valor money not null);
+insert into Jogos
+values (3, 'Resident_evil_4_remake', 'pc-ps4-xbox', '2023-03-18', 'terror-sobrevivencia','300');
+select * from Jogos;
+
+
+
+PRIMEIRA TABELA
+
+-- Table: public.jogos
+
+-- DROP TABLE IF EXISTS public.jogos;
+
+CREATE TABLE IF NOT EXISTS public.jogos
+(
+    id_jogo integer NOT NULL,
+    nome character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    plataforma character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    "lançamento" date NOT NULL,
+    categoria text COLLATE pg_catalog."default" NOT NULL,
+    valor money NOT NULL
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.jogos
+    OWNER to postgres;
+
+
+
+
+SEGUNDA TABELA
+-- Table: public.alunos  
+
+-- DROP TABLE IF EXISTS public.alunos;
+
+CREATE TABLE IF NOT EXISTS public.alunos
+(
+    idaluno integer NOT NULL,
+    nome character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    sobrenome character varying(30) COLLATE pg_catalog."default" NOT NULL,
+    sexo character(1) COLLATE pg_catalog."default" NOT NULL,
+    nascimento date NOT NULL
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.alunos
+    OWNER to postgres;
